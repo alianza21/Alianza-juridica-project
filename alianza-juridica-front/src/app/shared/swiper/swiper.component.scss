@@ -1,0 +1,59 @@
+.app-swiper {
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: #090055;
+}
+
+.swiper-container {
+  width: 100%;
+  height: auto; /* Permite que la altura se adapte o defínela según tus necesidades */
+  display: block;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 14 / 12;
+  min-height: 350px;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.slide-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5%;
+  background: 
+    linear-gradient(90deg, rgba(0,0,0,0.7) 0%, transparent 20%),
+    linear-gradient(270deg, rgba(0,0,0,0.7) 0%, transparent 20%);
+
+  color: #fff;
+  
+  width: 100%; 
+  min-width: 280px;
+  box-sizing: border-box; 
+}
+
+swiper-container::part(bullet-active) {
+  background-color: #090055;
+}
+
+@media (max-width: 768px) {
+  .slide-content {
+    width: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 80%);
+    
+  }
+}

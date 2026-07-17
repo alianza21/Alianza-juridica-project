@@ -1,0 +1,57 @@
+.split-section-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .banner-wrapper {
+  width: 100%;
+  max-width: 100vw; /* O el ancho máximo de tu diseño (ej. 100% si es un banner de pantalla completa) */
+  margin: 0 auto;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  //.banner-wrapper {
+    //padding: 0 1rem; /* Margen de seguridad para que no toque los bordes en móviles */
+  //}
+}
+
+.testimonials-section {
+  position: relative;
+  padding: 6rem 0;
+
+  background-image: url('/images/swiper-testimonials/imagen2_fondo_testimonials_swiper.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+}
+
+.testimonials-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+
+  background-image:
+    linear-gradient(90deg, #000 17%, transparent 71%),
+    linear-gradient(270deg, #000 17%, transparent 71%);
+
+  background-repeat: no-repeat;
+  background-position: left top, right top;
+  background-size: 45% 100%, 45% 100%;
+
+  mix-blend-mode: multiply;
+}
+
+.testimonials-title {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-bottom: 0.95em;
+}

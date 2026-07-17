@@ -1,0 +1,166 @@
+/* src/app/shared/header/header.component.scss */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo-img {
+    height: 48px;
+    width: auto;
+  }
+
+  .nav-desktop {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+
+    a {
+      color: #222;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    a:hover {
+      color: #007bff;
+    }
+  }
+
+  .logo-left, .logo-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-soto {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .hamburger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+
+  span {
+    position: absolute;
+    left: 8px;
+    width: 24px;
+    height: 2px;
+    background: #222;
+    border-radius: 2px;
+    transition: all .3s ease;
+  }
+
+  span:nth-child(1) {
+    top: 12px;
+  }
+
+  span:nth-child(2) {
+    top: 19px;
+  }
+
+  span:nth-child(3) {
+    top: 26px;
+  }
+
+  &.open {
+
+    span:nth-child(1) {
+      top: 19px;
+      transform: rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+
+    span:nth-child(3) {
+      top: 19px;
+      transform: rotate(-45deg);
+    }
+
+  }
+}
+
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #eee;
+    background: #fff;
+
+    a {
+      padding: 0.5rem 0;
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+    }
+  }
+
+  /* Responsive: mobile */
+  @media (max-width: 768px) {
+    .nav-desktop {
+      display: none;
+    }
+
+    .hamburger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-mobile {
+      display: flex;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease;
+    }
+
+    .nav-mobile.open {
+      max-height: 400px; /* suficiente para mostrar los enlaces */
+    }
+
+    .logo-img {
+      height: 40px;
+    }
+  }
+}
+
+
+/* Overlay que cubre y difumina el contenido cuando el menú móvil está abierto */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 3; /* debajo del header (z-index: 50) pero encima del contenido */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}

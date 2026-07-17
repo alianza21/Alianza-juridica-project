@@ -1,0 +1,25 @@
+<!-- testimonial-swiper.component.html -->
+<div class="testimonial-wrapper">
+  <swiper-container #swiperEl init="false" class="testimonial-swiper">
+    <swiper-slide *ngFor="let item of items">
+      <article class="testimonial-card">
+        <div class="testimonial-top">
+          
+
+          <div class="person">
+            <h3>{{ item.name }}</h3>
+            <p *ngIf="item.role">{{ item.role }}</p>
+          </div>
+        </div>
+
+        <div class="stars" *ngIf="item.rating">
+          <span *ngFor="let star of [1,2,3,4,5]">
+            {{ star <= (item.rating || 0) ? '★' : '☆' }}
+          </span>
+        </div>
+
+        <p class="message">{{ item.message }}</p>
+      </article>
+    </swiper-slide>
+  </swiper-container>
+</div>

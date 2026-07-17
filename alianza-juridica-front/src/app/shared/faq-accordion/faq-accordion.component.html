@@ -1,0 +1,22 @@
+<section class="faq-section">
+  <div class="faq-header">
+    <p class="eyebrow">{{ eyebrow }}</p>
+    <h2>{{ title }}</h2>
+    <p class="subtitle">{{ subtitle }}</p>
+  </div>
+
+  <div class="faq-list" *ngIf="items.length > 0">
+    <div class="faq-item" *ngFor="let item of items; let i = index" [class.open]="isOpen(i)">
+      <button type="button" class="faq-question" (click)="toggle(i)">
+        <span>{{ item.question }}</span>
+        <span class="icon">{{ isOpen(i) ? '–' : '+' }}</span>
+      </button>
+
+      <div class="faq-answer-wrapper">
+        <div class="faq-answer">
+          {{ item.answer }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

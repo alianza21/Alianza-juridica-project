@@ -1,0 +1,22 @@
+<!-- src/app/shared/components/split-section/split-section.component.html -->
+<section class="split-section" [class.image-right]="isImageRight" role="region" aria-label="Sección con imagen y texto">
+  <div class="split-inner">
+    <!-- Columna de imagen: proyecta cualquier contenido con slot=image -->
+    <div class="split-media">
+      <div class="projected-slot">
+        <ng-content select="[slot=image]"></ng-content>
+      </div>
+    </div>
+
+    <!-- Columna de texto -->
+    <div class="split-content">
+      <h2 class="split-title" *ngIf="title">{{ title }}</h2>
+      <p class="split-text" *ngIf="text">{{ text }}</p>
+
+      <!-- slot para botones u otro contenido -->
+      <div class="split-cta">
+        <ng-content select="[slot=content]"></ng-content>
+      </div>
+    </div>
+  </div>
+</section>

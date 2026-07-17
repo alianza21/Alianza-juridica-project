@@ -1,0 +1,101 @@
+/* src/app/shared/components/split-section/split-section.component.scss */
+
+.split-section {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f4f4f5;
+  transition: background-color 0.18s ease;
+  padding: 2rem 1rem;
+  overflow-x: clip;
+
+  &.image-right {
+    background-color: #ffffff;
+  }
+
+  .split-inner {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .split-media {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    box-sizing: border-box;
+  }
+
+  .split-content {
+    padding: 1.5rem;
+    color: #0b0b0b;
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  .projected-slot {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .split-title {
+    margin: 0 0 0.9rem 0;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #090055;
+  }
+
+  .split-text {
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+    color: #222;
+  }
+
+  .split-cta {
+    margin-top: 0.5rem;
+  }
+
+  &.image-right .split-media {
+    order: 2;
+  }
+
+  &.image-right .split-content {
+    order: 1;
+  }
+
+  .split-section-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.25rem 0.75rem;
+    overflow-x: hidden;
+
+    .split-inner {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .split-media {
+      order: 1 !important;
+    }
+
+    .split-content {
+      order: 2;
+      padding: 1rem;
+    }
+  }
+}

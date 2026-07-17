@@ -1,0 +1,153 @@
+<section class="form-page">
+  <div class="form-wrapper">
+    <div class="form-header">
+      <p class="eyebrow">Soto Argel & Asociados</p>
+      <h1>Formulario de consultas</h1>
+      <p class="subtitle">
+        Cuéntanos tu caso con el mayor detalle posible para darte una orientación más precisa.
+      </p>
+    </div>
+
+    <form class="consultation-card" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <div class="grid two-cols">
+        <div class="field">
+          <label for="fullName">Nombre completo <span>*</span></label>
+          <input
+            id="fullName"
+            type="text"
+            formControlName="fullName"
+            placeholder="Santiago Martínez"
+            (input)="onNameInput($event)"
+            [class.invalid]="isInvalid(f.fullName)"
+          />
+          <small *ngIf="isInvalid(f.fullName)">El nombre completo es obligatorio y debe contener entre 3 y 60 letras.</small>
+        </div>
+
+        <div class="field">
+          <label for="documentId">Número de documento <span>*</span></label>
+          <input
+            id="documentId"
+            type="text"
+            formControlName="documentId"
+            placeholder="123456789"
+            inputmode="numeric"
+            (input)="onDocumentInput($event)"
+            [class.invalid]="isInvalid(f.documentId)"
+          />
+          <small *ngIf="isInvalid(f.documentId)">Debe contener entre 6 y 10 números.</small>
+        </div>
+      </div>
+
+      <div class="grid two-cols">
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="user@email.com"
+            [class.invalid]="isInvalid(f.email)"
+          />
+          <small *ngIf="isInvalid(f.email)">Ingresa un correo válido.</small>
+        </div>
+
+        <div class="field">
+          <label for="phone">WhatsApp <span>*</span></label>
+          <input
+            id="phone"
+            type="tel"
+            formControlName="phone"
+            placeholder="3003123123"
+            inputmode="numeric"
+            (input)="onPhoneInput($event)"
+            [class.invalid]="isInvalid(f.phone)"
+          />
+          <small *ngIf="isInvalid(f.phone)">Debe contener exactamente 10 números.</small>
+        </div>
+      </div>
+
+      <div class="grid two-cols">
+        <div class="field">
+          <label for="town">Municipio de residencia <span>*</span></label>
+          <input
+            id="town"
+            type="text"
+            formControlName="town"
+            placeholder="Puerto Berrío"
+            (input)="onTownInput($event)"
+            [class.invalid]="isInvalid(f.town)"
+          />
+          <small *ngIf="isInvalid(f.town)">Debe contener entre 3 y 40 letras.</small>
+        </div>
+
+        <div class="field">
+          <label for="contactMethod">¿Cómo prefieres que te contactemos? <span>*</span></label>
+          <select
+            id="contactMethod"
+            formControlName="contactMethod"
+            [class.invalid]="isInvalid(f.contactMethod)"
+          >
+            <option value="">Seleccione una opción</option>
+            <option value="email">Correo electrónico</option>
+            <option value="phone">WhatsApp</option>
+          </select>
+          <small *ngIf="isInvalid(f.contactMethod)">Selecciona un método de contacto.</small>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="problemDescription">Describe brevemente tu caso <span>*</span></label>
+        <p class="helper-text">
+          Te recomendamos enumerar los hechos que consideres importantes en orden cronológico.
+        </p>
+        <textarea
+          id="problemDescription"
+          formControlName="problemDescription"
+          rows="7"
+          placeholder="Ejemplo:
+1. El 1 de enero de 2021 me despidieron de mi trabajo.
+2. Al día siguiente me enteré que..."
+          [class.invalid]="isInvalid(f.problemDescription)"
+        ></textarea>
+        <p class="tip">
+          Entre más detalles proporciones sobre tu caso, más precisa y efectiva será nuestra orientación legal.
+        </p>
+        <small *ngIf="isInvalid(f.problemDescription)">La descripción del caso es obligatoria.</small>
+      </div>
+
+      <div class="privacy-box">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="privacyPolicy" />
+          <span>
+            Autorizo el
+            <a routerLink="/legal/autorizacion-tratamiento-de-datos">tratamiento de mis datos personales</a>
+            <span>*</span>
+          </span>
+        </label>
+        <small *ngIf="isInvalid(f.privacyPolicy)">Debes aceptar la política de privacidad.</small>
+      </div>
+
+      <button type="submit" [disabled]="loading">
+        {{ loading ? 'Enviando...' : 'Enviar consulta' }}
+      </button>
+
+      <p class="message success" *ngIf="message && messageType === 'success'">
+        {{ message }}
+      </p>
+
+      <p class="message error" *ngIf="message && messageType === 'error'">
+        {{ message }}
+      </p>
+
+      <p class="legal-note">
+        Al enviar el formulario estás aceptando nuestra
+        <a routerLink="/legal/politica-de-tratamiento-de-datos">política de tratamiento de datos</a>.
+      </p>
+
+      <div class="support-note">
+        <span>¿Estás teniendo problemas con el formulario?</span>
+        <a href="https://wa.me/573027796666" target="_blank" rel="noreferrer">Escríbenos por WhatsApp</a>
+      </div>
+    </form>
+  </div>
+</section>

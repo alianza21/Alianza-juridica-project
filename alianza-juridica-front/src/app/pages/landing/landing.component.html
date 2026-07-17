@@ -1,0 +1,63 @@
+<!-- <app-main-banner></app-main-banner> -->
+
+<div class="banner-wrapper">
+<app-swiper [items]="slides" [autoplayDelay]="5000"></app-swiper>
+</div>
+
+
+<!-- <app-main-banner></app-main-banner> -->
+<app-split-section imagePosition="right" title="Sobre nosotros" text="Nuestro equipo está formado por profesionales altamente capacitados y comprometidos con brindar soluciones eficientes y efectivas a sus problemas legales. Nos especializamos en Derecho Laboral, Seguridad Social y Accidentes de Tránsito, y contamos con la experiencia necesaria para brindar asesoramiento, realizar trámites y representar legalmente a nuestros clientes. Ofrecemos atención de forma presencial y en línea de forma permanente, con especialistas en cada área de trabajo para garantizar la mejor calidad en cada servicio que ofrecemos.
+En nuestra oficina, la calidad humana y académica de nuestros profesionales es nuestra mayor fortaleza. Nos enfocamos en ofrecer soluciones inmediatas pero eficaces, demostrando nuestro profesionalismo y responsabilidad en cada caso que se nos presenta. Con nosotros, puede estar seguro de que sus asuntos legales estarán en las mejores manos.">
+  <div slot="image">
+    <img ngSrc="{{sobreNosotros}}" alt="Sobre nosotros" priority width="1200" height="800" class="split-section-image" />
+  </div>
+</app-split-section>
+
+<app-split-section imagePosition="left" title="Derecho laboral y Seguridad social" text="¿Estás buscando un abogado especialista en Derecho Laboral y Seguridad Social?¿Ha tenido problemas con la liquidación de su contrato de trabajo?¿No le han reconocido su pensión luego de cumplir los requisitos?">
+  <div slot="image">
+    <img ngSrc="{{laboral}}" alt="Sobre nosotros" priority width="1200" height="800" class="split-section-image" />
+  </div>
+
+  <div slot="content">
+      <p>Somos especialistas en:</p>
+
+      <ul class="split-list">
+        <li>Pensiones.</li>
+        <li>Trámites ante las EPS e IPS.</li>
+        <li>Riesgos laborales.</li>
+        <li>Liquidación de contratos de trabajo.</li>
+        <li>Reclamaciones ante empleadores públicos o privados.</li>
+        <li>Otros.</li>
+      </ul>
+  </div>
+</app-split-section>
+
+<app-split-section imagePosition="right" title="Accidentes de tránsito" text="¿Tuviste un accidente de Tránsito y necesitas asesoría legal?¿quedaste con alguna lesión, secuela física o mental después de un accidente de Transito? ¿un familiar falleció en accidente de tránsito? ¿El seguro del vehículo no quiere responder por los daños?">
+  <div slot="image">
+    <img ngSrc="{{accidente}}" alt="Accidente de tránsito" priority width="1200" height="800" class="split-section-image" style="width: 100%; height: auto!important;" />
+  </div>
+
+  <div slot="content">
+    <p>Somos especialistas en:</p>
+
+    <ul class="split-list">
+      <li>Reclamación de indemnización por lesiones y muerte en accidente de tránsito.</li>
+      <li>Reclamación ante la aseguradora por daños ocasionados en accidentes.</li>
+      <li>Reclamación ante el SOAT por muerte.</li>
+      <li>Responsabilidad civil en accidentes de tránsito.</li>
+      <li>Otros</li>
+    </ul>
+  </div>
+</app-split-section>
+
+<app-faq-accordion
+  [title]="'Preguntas frecuentes'"
+  [eyebrow]="''"
+  [subtitle]="'Resolvemos las dudas más comunes antes de enviar tu consulta.'"
+  [items]="faqItems"
+></app-faq-accordion>
+
+<section class="testimonials-section">
+  <h2 class="testimonials-title">Testimonios</h2>
+  <app-testimonial-swiper [items]="testimonials"></app-testimonial-swiper>
+</section>

@@ -1,0 +1,49 @@
+<!-- src/app/shared/header/header.component.html -->
+<header class="site-header">
+  <div class="header-inner">
+    <!-- Logo izquierdo -->
+    <div class="logo-left">
+      <img ngSrc="{{logo_soto}}" alt="Logo derecho" class="logo-img" priority width="4786" height="2059" routerLink="/" />
+    </div>
+
+    <!-- Título o enlaces principales (desktop) -->
+    <nav class="nav-desktop" aria-label="Navegación principal">
+      <a routerLink="/" (click)="closeMenu()">Inicio</a>
+      <a routerLink="/consulta" (click)="closeMenu()">Consulta</a>
+      <a routerLink="/servicios" (click)="closeMenu()">Servicios</a>
+      <a routerLink="/contacto" (click)="closeMenu()">Sobre nosotros</a>
+    </nav>
+
+    <!-- Botón hamburguesa (mobile) -->
+    <button
+      class="hamburger"
+      [class.open]="menuOpen"
+      aria-label="Abrir menú"
+      [attr.aria-expanded]="menuOpen"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Menú móvil desplegable -->
+  <nav
+    class="nav-mobile"
+    [class.open]="menuOpen"
+    aria-label="Navegación móvil"
+  >
+    <a routerLink="/" (click)="closeMenu()">Inicio</a>
+    <a routerLink="/consulta" (click)="closeMenu()">Consulta</a>
+    <a routerLink="/servicios" (click)="closeMenu()">Servicios</a>
+    <a routerLink="/contacto" (click)="closeMenu()">Sobre nosotros</a>
+  </nav>
+</header>
+
+<!-- Overlay: fuera del <header> para cubrir toda la pantalla -->
+<div
+  class="menu-overlay"
+  [class.open]="menuOpen"
+  (click)="closeMenu()"
+></div>

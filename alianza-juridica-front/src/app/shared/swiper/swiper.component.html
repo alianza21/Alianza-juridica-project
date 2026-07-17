@@ -1,0 +1,16 @@
+<swiper-container #swiperEl init="false" class="app-swiper">
+  <swiper-slide *ngFor="let item of items">
+    <article class="slide">
+      <img [src]="item.image" [alt]="item.alt" class="slide-image" />
+
+      <div class="slide-content" >
+        <h2 *ngIf="item.title" class="title-testimonials">{{ item.title }}</h2>
+        <p *ngIf="item.text">{{ item.text }}</p>
+
+        <a *ngIf="item.ctaLink" [routerLink]="item.ctaLink" class="slide-btn">
+          {{ item.ctaLabel || 'Ver más' }}
+        </a>
+      </div>
+    </article>
+  </swiper-slide>
+</swiper-container>

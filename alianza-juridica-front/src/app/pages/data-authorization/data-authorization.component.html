@@ -1,0 +1,41 @@
+<!-- src/app/pages/data-authorization/data-authorization.component.html -->
+<main class="auth-page">
+  <header class="auth-header">
+    <h1 class="page-title">AUTORIZACIÓN DE TRATAMIENTO DE DATOS PERSONALES</h1>
+    <p class="lead">Autorización de tratamiento de datos personales para SOTO ARGEL & ASOCIADOS</p>
+  </header>
+
+  <div class="content max-width">
+    <p>
+      En calidad de cliente y/o usuario de <strong>SOTO ARGEL & ASOCIADOS</strong> certifico que:
+    </p>
+
+    <p>
+      En observancia de lo establecido por la Ley 1581 de 2012 y el Decreto 1377 de 2013, SOTO ARGEL & ASOCIADOS ha sido respetuosa con la información personal proporcionada por mí y almacenada en sus bases de datos. Por lo tanto, y en cumplimiento de dichas disposiciones, me han comunicado lo siguiente:
+    </p>
+
+    <ol class="auth-list">
+      <li>
+        Se han aplicado todas las medidas de seguridad, protección, privacidad y confidencialidad necesarias en la gestión de esa información, tal como lo establece la ley y el manual interno de tratamiento de datos personales de la entidad.
+      </li>
+      <li>
+        Me informan que la información está a mi disposición para que la revise, actualice, corrija o elimine mediante la comunicación por cualquier medio en su sede principal o mediante los canales de comunicación electrónica que estén disponibles a través de su secretaría.
+      </li>
+    </ol>
+
+    <p>
+      Para estos fines, la entidad me ha proporcionado adecuadamente sus datos de contacto, tales como dirección, número telefónico, sitio web y correo electrónico.
+    </p>
+
+    <p>
+      Por consiguiente, doy mi autorización expresa a <strong>SOTO ARGEL & ASOCIADOS</strong> para tratar y transferir mis datos personales almacenados en sus bases de datos, siempre que no se trate de información considerada como datos sensibles según lo definido en la Ley 1581 de 2012, o en caso de que sean datos sensibles, siempre que se apliquen alguna de las excepciones previstas en dicha ley.
+    </p>
+
+    <section class="contact-info">
+      <h2 class="contact-title">Datos de contacto</h2>
+      <p><strong>Dirección:</strong> {{ branding.contact.address }}</p>
+      <p><strong>Correo electrónico: </strong> <a class="link" href="mailto:{{ branding.contact.mail }}">{{ branding.contact.mail }}</a></p>
+      <p><strong>Teléfono:</strong> {{ branding.contact.phone }}</p>
+    </section>
+  </div>
+</main>

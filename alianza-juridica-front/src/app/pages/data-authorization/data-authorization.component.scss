@@ -1,0 +1,65 @@
+/* src/app/pages/data-authorization/data-authorization.component.scss */
+.auth-page {
+  padding: 3rem 1rem;
+  color: #111;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.auth-header {
+  max-width: 960px;
+  margin: 0 auto 1.25rem auto;
+  text-align: left;
+
+  .page-title {
+    color: #0f3a8a; /* text-bluePrimary */
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .lead {
+    color: #555;
+    margin: 0;
+  }
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #333;
+
+  p { margin: 0.75rem 0; }
+
+  .auth-list {
+    margin: 0.75rem 0 1rem 1.25rem;
+    padding: 0;
+    li {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .contact-info {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e6e6e6;
+
+    .contact-title {
+      margin: 0 0 0.5rem 0;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .link {
+      color: #1e3a8a;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-page { padding: 1.25rem 0.75rem; }
+
+  .auth-header .page-title { font-size: 1.25rem; }
+}

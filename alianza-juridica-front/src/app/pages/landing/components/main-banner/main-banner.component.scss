@@ -1,0 +1,141 @@
+:host {
+  display: block;
+}
+
+.banner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner__hero {
+  background-image: url('/assets/images/main-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 72vh;
+  position: relative;
+}
+
+.banner__overlay {
+  min-height: 72vh;
+  width: 100%;
+  background: rgba(8, 15, 30, 0.62);
+  backdrop-filter: brightness(0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.25rem;
+}
+
+.banner__content {
+  max-width: 980px;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.banner__content h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 3rem);
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.banner__content h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.2vw, 2rem);
+  line-height: 1.35;
+  font-weight: 800;
+}
+
+.banner__cta {
+  margin-top: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.4rem;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.28);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.banner__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(37, 99, 235, 0.34);
+}
+
+.banner__strip {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 1.25rem;
+}
+
+.banner__strip h3 {
+  margin: 0;
+  max-width: 420px;
+  font-size: clamp(1rem, 1.7vw, 1.35rem);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.banner__services {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.banner__service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  text-align: center;
+  color: #fff;
+}
+
+.banner__icon {
+  width: 54px;
+  height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner__service p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .banner__hero,
+  .banner__overlay {
+    min-height: 62vh;
+  }
+
+  .banner__strip {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner__strip h3 {
+    max-width: 100%;
+  }
+
+  .banner__services {
+    justify-content: center;
+    gap: 1.25rem;
+  }
+}

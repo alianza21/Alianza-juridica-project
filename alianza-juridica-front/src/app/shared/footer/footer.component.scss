@@ -1,0 +1,139 @@
+/* src/app/shared/components/footer/footer.component.scss */
+.site-footer {
+  background-color: #090055;
+  color: #ffffff;
+  padding: 2rem 1rem;
+  font-family: system-ui, -apple-system;
+  box-sizing: border-box;
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .copyright-line {
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-separator {
+    border: none;
+    height: 1px;
+    background-color: #ffffff;
+    width: calc(100% - 48px); /* no toca los bordes */
+    margin: 0 auto 1rem auto;
+    border-radius: 1px;
+    opacity: 0.9;
+  }
+
+.footer-grid {
+    display: grid;
+    gap: 1.5rem;
+    align-items: start;
+
+    /* Desktop: dos columnas (Legal izquierda, Contacto derecha) */
+    @media (min-width: 769px) {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+
+    /* Mobile: una columna (Legal arriba, Contacto abajo) */
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Estilos del bloque Legal */
+  .footer-main {
+    text-align: left; /* en desktop se alinea a la izquierda */
+    margin-bottom: 0;
+
+    .footer-link {
+      margin: 0.25rem 0;
+
+      .link {
+        color: #ffffff;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        font-weight: 500;
+        transition: color 0.15s ease, opacity 0.15s ease;
+      }
+
+      .link:hover,
+      .link:focus {
+        color: #cbd5ff;
+        outline: none;
+      }
+    }
+  }
+
+  .footer-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 0 0 0.75rem 0;
+    font-weight: 600;
+  }
+
+  /* Estilos del bloque Contacto */
+  .footer-bottom {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: flex-start; /* por defecto a la izquierda en mobile */
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+
+    /* En desktop, alinear a la derecha */
+    @media (min-width: 769px) {
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .footer-title {
+      margin: 0 0 0.50rem 0;
+    }
+  }
+
+  .footer-item {
+    margin: 0;
+  }
+
+  .link {
+    color: #e6e6e6;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .link:hover { text-decoration: underline; }
+
+  .icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: currentColor;
+    flex: 0 0 auto;
+  }
+
+  .icon-whatsapp {
+    color: #25D366 !important;
+  }
+
+  /* Ajustes responsivos pequeños */
+  @media (max-width: 480px) {
+    padding: 1.25rem 0.75rem;
+
+    .footer-separator {
+      width: calc(100% - 32px);
+    }
+
+    .footer-bottom {
+      gap: 0.5rem;
+      p { font-size: 0.9rem; }
+    }
+  }
+}
