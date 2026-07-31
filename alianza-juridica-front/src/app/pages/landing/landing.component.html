@@ -4,6 +4,17 @@
 <app-swiper [items]="slides" [autoplayDelay]="5000"></app-swiper>
 </div>
 
+<app-faq-accordion
+  [title]="'Preguntas frecuentes'"
+  [eyebrow]="''"
+  [subtitle]="'Resolvemos las dudas más comunes antes de enviar tu consulta.'"
+  [items]="faqItems"
+></app-faq-accordion>
+
+<section class="testimonials-section">
+  <h2 class="testimonials-title">Testimonios</h2>
+  <app-testimonial-swiper [items]="testimonials"></app-testimonial-swiper>
+</section>
 
 <!-- <app-main-banner></app-main-banner> -->
 <app-split-section imagePosition="right" title="Sobre nosotros" text="Nuestro equipo está formado por profesionales altamente capacitados y comprometidos con brindar soluciones eficientes y efectivas a sus problemas legales. Nos especializamos en Derecho Laboral, Seguridad Social y Accidentes de Tránsito, y contamos con la experiencia necesaria para brindar asesoramiento, realizar trámites y representar legalmente a nuestros clientes. Ofrecemos atención de forma presencial y en línea de forma permanente, con especialistas en cada área de trabajo para garantizar la mejor calidad en cada servicio que ofrecemos.
@@ -50,14 +61,3 @@ En nuestra oficina, la calidad humana y académica de nuestros profesionales es 
   </div>
 </app-split-section>
 
-<app-faq-accordion
-  [title]="'Preguntas frecuentes'"
-  [eyebrow]="''"
-  [subtitle]="'Resolvemos las dudas más comunes antes de enviar tu consulta.'"
-  [items]="faqItems"
-></app-faq-accordion>
-
-<section class="testimonials-section">
-  <h2 class="testimonials-title">Testimonios</h2>
-  <app-testimonial-swiper [items]="testimonials"></app-testimonial-swiper>
-</section>

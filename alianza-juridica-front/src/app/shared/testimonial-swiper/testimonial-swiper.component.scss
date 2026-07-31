@@ -137,8 +137,73 @@ swiper-container::part(bullet-active) {
   background-color: #1000a4;
 }
 
-swiper-container::part(button-next), swiper-container::part(button-prev)  {
-  color: #1000a4; 
+/* --- Controles: < • • • • • > --- */
+.testimonial-controls {
+  display: none; // oculto en mobile, igual que tu breakpoint 0
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+.nav-btn {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #1000a4;
+  background: transparent;
+  color: #1000a4;
+  cursor: pointer;
+  font-size: 1.3rem;
+  line-height: 1;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: #1000a4;
+    color: #fff;
+  }
+
+  &.swiper-button-disabled,
+  &:disabled {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.testimonial-pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  ::ng-deep .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: rgba(16, 0, 164, 0.35);
+    opacity: 1;
+    margin: 0 !important;
+  }
+
+  ::ng-deep .swiper-pagination-bullet-active {
+    background: #1000a4;
+    width: 22px;
+    border-radius: 5px;
+    transition: width 0.2s ease;
+  }
+}
+
+.swiper-navigation-icon-prev {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+  .testimonial-controls {
+    display: flex;
+  }
 }
 
 @media (max-width: 767px) {
