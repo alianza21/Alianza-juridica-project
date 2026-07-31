@@ -12,12 +12,6 @@
 
 
 
-@media screen and (max-width: 768px) {
-  //.banner-wrapper {
-    //padding: 0 1rem; /* Margen de seguridad para que no toque los bordes en móviles */
-  //}
-}
-
 .testimonials-section {
   position: relative;
   padding: 6rem 0;
@@ -54,4 +48,13 @@
   text-transform: uppercase;
   font-size: 30px;
   margin-bottom: 0.95em;
+}
+
+@media screen and (max-width: 768px) {
+  //.banner-wrapper {
+    //padding: 0 1rem; /* Margen de seguridad para que no toque los bordes en móviles */
+  //}
+  .testimonials-section::before {
+    background: none;
+  }
 }

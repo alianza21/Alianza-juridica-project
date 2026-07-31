@@ -12,7 +12,7 @@ export interface TestimonialItem {
   name: string;
   role?: string;
   message: string;
-  rating?: number; // 1 a 5
+  rating?: number;
   image?: string;
 }
 
@@ -26,9 +26,11 @@ export interface TestimonialItem {
 })
 export class TestimonialSwiperComponent implements AfterViewInit {
   @ViewChild('swiperEl', { static: true }) swiperEl!: ElementRef<HTMLElement>;
+  @ViewChild('prevEl', { static: true }) prevEl!: ElementRef<HTMLButtonElement>;
+  @ViewChild('nextEl', { static: true }) nextEl!: ElementRef<HTMLButtonElement>;
+  @ViewChild('paginationEl', { static: true }) paginationEl!: ElementRef<HTMLElement>;
 
   @Input() items: TestimonialItem[] = [];
-  @Input() autoplayDelay = 4500;
   @Input() slidesPerView: number | 'auto' = 1;
   @Input() desktopSlidesPerView = 3;
 
@@ -36,7 +38,6 @@ export class TestimonialSwiperComponent implements AfterViewInit {
     const el = this.swiperEl.nativeElement as any;
     const total = this.items.length;
 
-    // Loop seguro solo si hay suficientes slides
     const canLoop = total >= 4;
     const canCenter = this.items.length >= 5;
 
@@ -46,23 +47,30 @@ export class TestimonialSwiperComponent implements AfterViewInit {
       loop: canLoop,
       rewind: !canLoop,
       centeredSlides: canCenter,
-      navigation: true,
+
+      // Navegación y paginación ahora apuntan a elementos externos
+      navigation: {
+        enabled: false, // se activa en el breakpoint 768
+        nextEl: this.nextEl.nativeElement,
+        prevEl: this.prevEl.nativeElement,
+      },
       pagination: {
-        enabled: false, // se activa desde 768px 
+        enabled: false,
+        el: this.paginationEl.nativeElement,
         clickable: true,
       },
+
       breakpoints: {
+        0: {
+          navigation: { enabled: false },
+          pagination: { enabled: false },
+        },
         768: {
           slidesPerView: Math.min(this.desktopSlidesPerView, total || this.desktopSlidesPerView),
-          pagination: {
-            enabled: true,
-            clickable: true,
-          },
+          navigation: { enabled: true },
+          pagination: { enabled: true },
         },
       },
-      autoplay: this.autoplayDelay
-        ? { delay: this.autoplayDelay, disableOnInteraction: false }
-        : undefined,
     });
 
     el.initialize();

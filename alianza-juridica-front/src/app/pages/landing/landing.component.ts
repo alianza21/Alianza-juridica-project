@@ -91,7 +91,7 @@ export class LandingComponent {
       name: 'Harold Hugo Neris.',
       role: 'cliente',
       rating: 5,
-      message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porta non ipsum vitae sollicitudin. Duis suscipit, sapien at pellentesque rutrum, ipsum nisi tincidunt nulla, sed elementum libero libero ac sem. Ut rhoncus pharetra risus, vitae venenatis lorem tincidunt ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin imperdiet at felis vel lacinia. Donec consequat faucibus eros non pretium. In libero ante, scelerisque nec pretium in, convallis sit amet libero. Aenean nec urna eu turpis iaculis maximus quis id odio. Proin vel laoreet mauris. Curabitur fringilla, ligula ut vestibulum faucibus, magna neque euismod turpis, quis maximus erat odio in augue. Mauris commodo ultricies ipsum, in semper lacus venenatis non. Morbi semper elit ac nulla feugiat mollis. Fusce nunc ex, maximus id sollicitudin viverra, mollis dapibus.'
+      message: 'Lorem ipsum dolor sit amet.'
     },
   ];
 }
