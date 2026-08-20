@@ -4,6 +4,16 @@
 <app-swiper [items]="slides" [autoplayDelay]="5000"></app-swiper>
 </div>
 
+<app-banner-consultation
+  [title]="'Nos importa, nosotros pelearemos por sus derechos'"
+  [subtitle]="'Personal serio y responsable con su caso. Haz una consulta con nuestros especialistas y recibe orientación personalizada.'"
+  
+  [buttons]="[
+    { label: 'Realizar consulta ahora', route: '/consulta', primary: true }
+  ]"
+></app-banner-consultation>
+
+
 <app-faq-accordion
   [title]="'Preguntas frecuentes'"
   [eyebrow]="''"

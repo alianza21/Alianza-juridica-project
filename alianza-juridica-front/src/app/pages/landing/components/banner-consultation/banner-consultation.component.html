@@ -1,0 +1,37 @@
+
+<div class="banner-consultation-section"
+  [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}"
+  aria-label="Banner de consulta">
+  <div class="banner-overlay"></div>
+    <div class="banner-consultation-content">
+        <div class="consultation-title">
+            <h2>{{ title }}</h2>
+        </div>
+        <div class="consultation-paragraph">
+            <p>{{ subtitle }}</p>
+        </div>
+        <div class="consultation-buttons">
+          <ng-container *ngFor="let btn of buttons">
+            <a
+              *ngIf="btn.href"
+              class="btn"
+              [class.primary]="btn.primary"
+              [href]="btn.href"
+              rel="noopener"
+            >
+              {{ btn.label }}  
+            </a>
+
+           <a
+              *ngIf="btn.route && !btn.href"
+              class="btn"
+              [class.primary]="btn.primary"
+              [routerLink]="btn.route"
+            >
+              {{ btn.label }}
+            </a>
+          </ng-container>
+        </div>
+    </div>
+</div>
+    

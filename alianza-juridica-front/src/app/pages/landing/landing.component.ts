@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SplitSectionComponent } from './components/split-section/split-section.component';
 import { MainBannerComponent } from './components/main-banner/main-banner.component';
+import { BannerConsultationComponent } from './components/banner-consultation/banner-consultation.component';
 import { FaqAccordionComponent } from '../../shared/faq-accordion/faq-accordion.component';
 import { NgOptimizedImage } from '@angular/common';
 import { SwiperComponent, SwiperItem } from '../../shared/swiper/swiper.component';
@@ -13,6 +14,7 @@ import { TestimonialItem, TestimonialSwiperComponent } from '../../shared/testim
     standalone:     true,
     imports: [SplitSectionComponent, 
         FaqAccordionComponent,
+        BannerConsultationComponent,
         NgOptimizedImage,
         SwiperComponent,
         TestimonialSwiperComponent
